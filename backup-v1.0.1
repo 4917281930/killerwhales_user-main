@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>killer whales</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&display=swap');
+        
+        :root {
+            --primary-blue: #00cece; /* Reduced brightness from #00ffff */
+            --dark-blue: #003366;
+            --mid-blue: #0099cc;
+            --light-blue: #55b8e6; /* Reduced brightness from #66ccff */
+            --bg-color: #000033;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--primary-blue);
+            font-family: 'VT323', monospace;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                linear-gradient(rgba(0, 51, 102, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 51, 102, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .glitch-wrapper {
+            position: relative;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .glitch {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 2.5rem; /* Reduced from 3rem for better mobile display */
+            text-transform: lowercase;
+            position: relative;
+            color: var(--primary-blue);
+            letter-spacing: 3px;
+            text-shadow: 
+                0 0 3px var(--primary-blue),
+                0 0 7px var(--primary-blue); /* Reduced glow intensity */
+            animation: glitch 2s infinite;
+        }
+        
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+        
+        .scanline {
+            width: 100%;
+            height: 5px;
+            background-color: var(--primary-blue);
+            opacity: 0.2; /* Reduced from 0.3 */
+            position: absolute;
+            top: 50%;
+            animation: scanline 6s linear infinite;
+        }
+        
+        @keyframes scanline {
+            0% { top: 0%; }
+            100% { top: 100%; }
+        }
+        
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+            position: relative;
+            background-color: rgba(0, 10, 30, 0.7);
+            padding: 30px;
+            border: 2px solid var(--mid-blue);
+            box-shadow: 0 0 8px var(--primary-blue), inset 0 0 15px rgba(0, 206, 206, 0.15); /* Reduced intensity */
+        }
+        
+        .profile-box {
+            background-color: rgba(0, 51, 102, 0.3);
+            padding: 30px;
+            border-radius: 5px;
+            margin-top: 20px;
+            border: 1px dashed var(--light-blue);
+            max-width: 800px;
+            text-align: left;
+            font-size: 18px; /* Slightly reduced from 20px */
+        }
+        
+        .profile-box p {
+            margin-bottom: 15px;
+        }
+        
+        .profile-box h2 {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 1.3rem; /* Reduced from 1.5rem */
+            margin-bottom: 20px;
+            color: var(--light-blue);
+            text-transform: uppercase;
+        }
+        
+        .identity-tag {
+            margin-top: 10px;
+            font-size: 1.1rem; /* Reduced from 1.2rem */
+            color: var(--light-blue);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: blink 1.5s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 0.9; } /* Reduced from 1 */
+            50% { opacity: 0.5; }
+        }
+        
+        .crypto-badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            order: -1;
+        }
+        
+        .badge {
+            background-color: rgba(0, 51, 102, 0.5);
+            padding: 10px 20px;
+            border: 1px solid var(--primary-blue);
+            color: var(--primary-blue);
+            font-size: 1.1rem; /* Reduced from 1.2rem */
+            display: inline-block;
+            text-transform: uppercase;
+            box-shadow: 0 0 3px var(--primary-blue); /* Reduced from 5px */
+        }
+        
+        .badges-row {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .sns-section {
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .sns-handle {
+            font-size: 1.2rem; /* Reduced from 1.3rem */
+            color: var(--light-blue);
+            margin-bottom: 5px;
+        }
+        
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .telegram-link {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+        
+        .telegram-icon {
+            width: 40px;
+            height: 40px;
+            filter: drop-shadow(0 0 3px var(--primary-blue)); /* Reduced from 5px */
+            transition: all 0.3s ease;
+        }
+        
+        .telegram-icon:hover {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 7px var(--primary-blue)); /* Reduced from 10px */
+        }
+        
+        .vhs-effect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.15),
+                rgba(0, 0, 0, 0.15) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            z-index: 10;
+            opacity: 0.3;
+        }
+        
+        .noise::before {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            content: "";
+            opacity: 0.04; /* Reduced from 0.05 */
+            z-index: 1000;
+            pointer-events: none;
+            background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RDI3NEU4NURGRkJCMTFFMzg2RjhBRjhDMTc1RUNBMDMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RDI3NEU4NUVGRkJCMTFFMzg2RjhBRjhDMTc1RUNBMDMiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpEMjc0RTg1QkZGQkIxMUUzODZGOEFGOEMxNzVFQ0EwMyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpEMjc0RTg1Q0ZGQkIxMUUzODZGOEFGOEMxNzVFQ0EwMyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PoDQyLcAAAJMSURBVHja7JpNaxNRFIbfczNJY9L4UdAUxUVrP1xIUaGIC8WFbtSNLly4FvQPuHLhzsWs3AruXIqiC0XQqoi6cllKQRBaWtq0zaTJzNzrSWrb2DbJTJvMGc0LDwSSTO597rnn3nMn4dRTjynkC18SLHpLMPEGBavHoWMcEceRF8ewZGMNK4cvwioi+NpJwZiLosYolGxO9AjrPOGEHEgaA7iBRZxCmS5y5McRUJgmvYMSrbq4hyJqeFXP4S1eVWIY5Tf2KI1pnMYDHIbLbz3HO1rBPIbwEadxFe+R4XWvcQS3sBeL/qjwUEgCC5hADvdxEYcwiz1YQRaX8Zgu8xAJdqn/YdJdLIfZMJFxvMc9PMOoa2aRpQjVx+I/DnXzwaiySsFbOO6amHHnuKYIfrfr9EAe4QKm8KTtrIbnI3zgN53HHdfi98a0bQoZwzecwQP3ZqO0RspJ0xEKquGqW3vF9eaxn6L2tmPbNGRoCGCR0VbBBCVspQIjm0/j4Zbi3w7sbiWYBi2Y8oYp1T+TZiShKEz5eVyQlxiJaYrSDVxEMTJjMYZC9NfkQowk6/Kyy5Uom2L2zAi5uVpN1COswzoxhBjZ5fJrWqNrY6hDhNgQYkOIDSGdwvj4B1XTGSscGjnf5+WM1c8D4hDG9HOv8qZMVJDMYrTRhZLmDmIbCqkgk2hxEzxXXUdxtc1Jm+RJf1qtuC1bvSKiN7QRrQtphFCZtMOEGQjh84e5nt5DGr5M+M1MRva5xvfQf3zZEGJDiA0hNoRsL34JMAD5zBT3SDB4sgAAAABJRU5ErkJggg==");
+            animation: noise .2s infinite;
+        }
+
+        @keyframes noise {
+            0%, 100% { transform: translate(0, 0) }
+            10% { transform: translate(-1px, -1px) }
+            20% { transform: translate(1px, 1px) }
+            30% { transform: translate(-1px, 1px) }
+            40% { transform: translate(1px, -1px) }
+            50% { transform: translate(-1px, -1px) }
+            60% { transform: translate(1px, 1px) }
+            70% { transform: translate(-1px, 1px) }
+            80% { transform: translate(1px, -1px) }
+            90% { transform: translate(-2px, -2px) }
+        }
+        
+        /* Enhanced binary rain effect - increased density */
+        .binary-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 5;
+            overflow: hidden;
+        }
+        
+        .binary-column {
+            position: absolute;
+            top: -20%;
+            color: var(--primary-blue);
+            font-family: monospace;
+            font-size: 14px;
+            opacity: 0.25; /* Maintained the same brightness */
+            text-shadow: 0 0 2px var(--primary-blue);
+            animation: rain linear infinite;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            letter-spacing: 0;
+            line-height: 1;
+        }
+        
+        @keyframes rain {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+        
+        .binary-digit {
+            display: block;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Bottom links section */
+        .bottom-links {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            border: 1px solid var(--mid-blue);
+            background-color: rgba(0, 10, 30, 0.5);
+            box-shadow: 0 0 5px var(--primary-blue); /* Reduced from 8px */
+            margin-bottom: 40px;
+        }
+        
+        .bottom-links .sns-handle {
+            margin-bottom: 10px;
+        }
+        
+        /* Mobile optimization */
+        @media (max-width: 767px) {
+            .glitch {
+                font-size: 2rem; /* Further reduced size for mobile */
+            }
+            
+            .profile-box {
+                padding: 20px;
+                font-size: 16px;
+            }
+            
+            .crypto-badges {
+                gap: 10px;
+            }
+            
+            .badge {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .binary-column {
+                opacity: 0.2; /* Even less visible on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="noise"></div>
+    <div class="vhs-effect"></div>
+    <div class="scanline"></div>
+    <div class="binary-rain" id="binary-rain"></div>
+    
+    <div class="container">
+        <div class="glitch-wrapper">
+            <h1 class="glitch">killer whales</h1>
+            <div class="identity-tag">[ crypto explorer | silent observer ]</div>
+            
+            <div class="crypto-badges">
+                <div class="badges-row">
+                    <div class="badge">crypto trader</div>
+                    <div class="badge">airdrop hunter</div>
+                </div>
+                <div class="badges-row">
+                    <div class="badge">validator</div>
+                    <div class="badge">strategist</div>
+                    <div class="badge">freedom life</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="profile-section">
+            <div class="profile-box">
+                <h2>// identity profile</h2>
+                <p>An anonymous entity in the crypto realm, operating under the moniker "killer whales". Just another swimmer in the vast digital ocean, learning and growing with each market wave.</p>
+                
+                <p>Studying market patterns and blockchain ecosystems with quiet dedication. Fortunate to have encountered opportunities in trading and airdrops through patient observation rather than any special insight.</p>
+                
+                <p>Running validator nodes as a small contribution to network security and decentralization. Grateful to be part of the emerging world of digital assets and blockchain technology.</p>
+                
+                <p>Owner of killerwhales.sats and killerwhaleslabs.sats on Bitcoin, not by exceptional merit but through fortunate timing and community support.</p>
+            </div>
+            
+            <div class="profile-box">
+                <h2>// NODE - VALIDATOR</h2>
+                <p>killerwhales_user</p>
+                <p>We are a professional Validator and Node Operator actively supporting both EVM and Cosmos ecosystems. Our infrastructure is built on high-performance, enterprise-grade configurations, optimized for efficiency, reliability, and long-term stability.</p>
+                <p>With a multi-layer security framework and continuous real-time monitoring, we ensure that our operations remain safe, resilient, and transparent at all times.</p>
+                <p>We are committed to standing alongside the projects we support—delivering timely upgrades, rapid patching, and consistent reliability—providing maximum trust for both the community and the network.</p>
+            </div>
+        </div>
+        
+        <div class="bottom-links">
+            <div class="sns-handle"><a href="https://ordinals.com/inscription/52199732cdedfdb6bef0b6cead32ed9389beb14e40bb554eda6a812f773fac12i0" target="_blank" style="color:inherit; text-decoration:none;">killerwhales.sats</a></div>
+            <div class="sns-handle"><a href="https://ordinals.com/inscription/3de542702e8f24ee4c40ece613a49aa0147cfbb772ca88abf68039a3497f123di0" target="_blank" style="color:inherit; text-decoration:none;">killerwhaleslabs.sats</a></div>
+        </div>
+    </div>
+    
+    <footer>
+        <a href="https://t.me/killerwhales_user" class="telegram-link" target="_blank" rel="noopener noreferrer">
+            <svg class="telegram-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#00cece">
+                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.155l-1.98 9.327c-.146.658-.538.818-1.084.51l-3-2.21-1.445 1.394c-.16.16-.295.295-.603.295l.213-3.053 5.56-5.023c.242-.213-.054-.334-.373-.12l-6.87 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.538-.196 1.006.128.838.892z"/>
+            </svg>
+        </a>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const binaryRain = document.getElementById('binary-rain');
+            const screenWidth = window.innerWidth;
+            // Decreased column spacing to make binary rain denser
+            const columnSpacing = window.innerWidth < 768 ? 13 : 10; // Reduced spacing to increase density
+            const numColumns = Math.floor(screenWidth / columnSpacing);
+            
+            // Create binary columns
+            for (let i = 0; i < numColumns; i++) {
+                createBinaryColumn(i);
+            }
+            
+            function createBinaryColumn(index) {
+                const column = document.createElement('div');
+                column.className = 'binary-column';
+                column.style.left = `${(index * columnSpacing) + Math.random() * 3}px`;
+                
+                // Animation duration
+                const duration = 12 + Math.random() * 18;
+                column.style.animationDuration = `${duration}s`;
+                
+                // Delayed start for cascade effect
+                column.style.animationDelay = `${Math.random() * 5}s`;
+                
+                // Create binary content as separate spans
+                let contentHTML = '';
+                // Each column has different length
+                const length = 25 + Math.floor(Math.random() * 40); // Increased length for denser rain
+                
+                // Decision on brighter column - maintaining the same number of bright columns
+                const isBrighter = Math.random() < 0.2;
+                if (isBrighter) {
+                    column.style.opacity = '0.35';
+                    column.style.textShadow = '0 0 3px var(--primary-blue)';
+                }
+                
+                // Column pattern - some have more 1s than 0s and vice versa
+                const pattern = Math.random() < 0.5 ? 0.3 : 0.7; // Probability of getting a 1
+                
+                for (let j = 0; j < length; j++) {
+                    // Create 0 or 1 with probability according to pattern
+                    const digit = Math.random() < pattern ? '1' : '0';
+                    contentHTML += `<span class="binary-digit">${digit}</span>`;
+                }
+                
+                column.innerHTML = contentHTML;
+                
+                // Different speeds - some columns move faster than others
+                if (Math.random() < 0.3) {
+                    column.style.animationDuration = `${duration * 0.8}s`; // 20% faster
+                }
+                
+                binaryRain.appendChild(column);
+            }
+        });
+    </script>
+</body>
+</html>
