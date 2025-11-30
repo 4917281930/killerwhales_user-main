@@ -4,6 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>killerwhales_user | Validator Identity</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/dcrod1pop/image/upload/v1764266496/IMG_0035_rg6et1.jpg">
+    <link rel="shortcut icon" href="https://res.cloudinary.com/dcrod1pop/image/upload/v1764266496/IMG_0035_rg6et1.jpg">
+    <link rel="apple-touch-icon" href="https://res.cloudinary.com/dcrod1pop/image/upload/v1764266496/IMG_0035_rg6et1.jpg">
+    
+    <!-- Structured Data for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "killerwhales_user",
+      "url": "https://killerwhalesresearcher.xyz",
+      "logo": "https://res.cloudinary.com/dcrod1pop/image/upload/v1764266496/IMG_0035_rg6et1.jpg"
+    }
+    </script>
+    
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
@@ -245,7 +262,7 @@
                     </div>
                 </div>
                 <div class="card-meta">
-                    <span>STATUS: ONLINE</span>
+                    <span>STATUS: PRIVATE</span>
                     <span>TYPE: CORE</span>
                 </div>
             </div>
